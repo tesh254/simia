@@ -4,6 +4,7 @@ from os import getenv
 import os
 import fnmatch
 from clean import clean_files, clean_directories
+from discord import send_link
 
 load_dotenv(find_dotenv())
 
@@ -11,7 +12,7 @@ EMAIL = getenv("EMAIL")
 PASSWORD = getenv("PASS")
 
 
-def upload():
+def upload(filename):
 
     mega = Mega()
     m = mega.login(EMAIL, PASSWORD)
@@ -23,14 +24,14 @@ def upload():
     for root, dirnames, filenames in os.walk(localpath):
         for filename in fnmatch.filter(filenames, '*'):
             list_of_files.append(os.path.join(root, filename))
-    latest_file = max(list_of_files, key=os.path.getctime)
+    # latest_file = max(list_of_files, key=os.path.getctime)
 
     folder = m.find('Downloads', exclude_deleted=True)
 
-    upload = m.upload(latest_file, folder[0])
-    upload_link = m.get_upload_link(upload)
+    for file in list_of_files:
+        upload = m.upload(file, folder[0])
+        upload_link = m.get_upload_link(upload)
+        send_link(filename, upload_link)
 
     clean_files()
     clean_directories()
-
-    print(upload_link)

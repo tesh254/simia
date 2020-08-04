@@ -44,7 +44,7 @@ def torrent():
         time.sleep(1)
 
     print(h.name(), "complete")
-    upload()
+    upload(h.name())
 
 
 torrent()
