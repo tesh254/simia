@@ -71,7 +71,7 @@ httplib2==0.14.0
 hyperframe==5.2.0
 idna==2.8
 imageio==2.4.1
-impacket==0.9.20
+impacket==0.9.23
 ipdb==0.12.2
 IPy==1.0
 ipykernel==5.2.0
