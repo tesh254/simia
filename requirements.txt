@@ -133,7 +133,7 @@ onioncircuits==0.6
 onionshare==2.2
 packaging==20.3
 pandocfilters==1.4.2
-paramiko==2.6.0
+paramiko==2.10.1
 parsero==0.82
 parso==0.6.2
 passlib==1.7.2
