@@ -99,7 +99,7 @@ LibAppArmor==2.13.4
 logutils==0.3.3
 lxml==4.5.0
 lz4==3.0.2+dfsg
-Mako==1.1.2
+Mako==1.2.2
 Markdown==3.2.1
 MarkupSafe==1.1.1
 mate-menu==20.4.1
